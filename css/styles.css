@@ -4,10 +4,29 @@ body {
   color: #111;
   background-color: #fafafa;
 }
-/* 🔴 Add Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 button {
   font-family: inherit;
   color: inherit;
+  cursor: pointer;
 }
 address {
   font-style: normal;
@@ -15,11 +34,36 @@ address {
 /* #endregion Base */
 
 /* #region Common */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.container {
+  width: 1168px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
 .ingridients-title,
 .made-title,
 .products-title,
 .bestsellers-title,
 .reviews-title {
+  width: 412px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;
@@ -31,11 +75,15 @@ address {
   color: #fd9222;
 }
 .btn {
+  min-width: 144px;
+  min-height: 45px;
+  padding: 14px 40px;
   font-weight: 600;
   line-height: 1.21;
   color: #ffffff;
   background-color: transparent;
-  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 100px;
 }
 .btn-accent {
   background-color: #fd9222;
@@ -47,6 +95,7 @@ address {
 }
 .btn-light {
   color: #ffffff;
+  border-color: #fff;
 }
 .btn-light:hover,
 .btn-light:focus {
@@ -55,6 +104,7 @@ address {
 .btn-dark {
   font-size: 18px;
   color: currentColor;
+  border-color: #fd9222;
 }
 .btn-dark:hover,
 .btn-dark:focus {
@@ -133,6 +183,9 @@ address {
   background: rgba(17, 17, 17, 0.7);
 }
 .hero-title {
+  width: 484px;
+  margin-bottom: 32px;
+
   font-weight: 500;
   font-size: 28px;
   line-height: 1.21;
