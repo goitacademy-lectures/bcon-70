@@ -94,6 +94,13 @@ img {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 100px;
+
+  /* transition-property: color, background-color, border-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  transition-delay: 0s; */
+  transition: color 500ms ease-in, background-color 500ms ease-in,
+    border-color 500ms ease-in;
 }
 .btn-accent {
   background-color: #fd9222;
@@ -147,9 +154,23 @@ img {
 .menu-item {
 }
 .menu-link {
+  position: relative;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.02em;
+  transition: color 300ms ease-in;
+}
+.menu-link.current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 20px;
+
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+  background: #fd9222;
 }
 .header-menu .menu-link {
   display: block;
@@ -185,6 +206,9 @@ img {
   color: #111;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 10px;
+
+  transition: 300ms ease-in;
+  transition-property: color, border-color;
 }
 .socials-link:hover,
 .socials-link:focus {
@@ -204,6 +228,10 @@ img {
 
 /* #region Header */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
 }
 .header .container {
   display: flex;
@@ -250,6 +278,10 @@ img {
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #fff;
+  /* transform: translateX(10px) translateY(150px);
+  transform: scale(0.3);
+  transform: rotate(45deg);
+  transform: skewX(10deg) skewY(10deg); */
 }
 .hero-list {
   display: flex;
@@ -274,6 +306,7 @@ img {
   line-height: 1.28;
   letter-spacing: -0.03em;
   color: #fff;
+  transition: color 300ms ease-in;
 }
 .hero-link:hover,
 .hero-link:focus {
@@ -289,6 +322,9 @@ img {
   color: #fd9222;
   background: #fff;
   border-radius: 50%;
+
+  transition: 300ms ease-in;
+  transition-property: color, background-color;
 }
 .hero-link:hover .hero-link-decor,
 .hero-link:focus .hero-link-decor {
@@ -311,13 +347,17 @@ img {
   gap: 88px;
 }
 .benefits-item {
+  position: relative;
   width: 308px;
 }
 .benefits-item:not(:last-child)::after {
   content: '';
+  position: absolute;
+  top: calc((100% - 124px) / 2);
+  right: -44px;
   display: block;
   width: 1px;
-  height: 124px;
+  height: 51%;
   background: rgba(255, 255, 255, 0.5);
 }
 .benefits-wrapper {
@@ -359,6 +399,8 @@ img {
   gap: 32px;
 }
 .ingridients-item {
+  position: relative;
+
   width: calc((100% - 32px * 3) / 4);
   padding: 28px 23px;
 
@@ -381,6 +423,10 @@ img {
   border-color: #fd9222;
 }
 .ingridients-icon {
+  position: absolute;
+  top: 14px;
+  /* right: 14px; */
+  left: 222px;
   stroke: #fff;
 }
 .ingridients-item:nth-child(2n) .ingridients-icon {
@@ -453,7 +499,6 @@ img {
   border: 1px solid #eceded;
   border-radius: 50%;
 }
-
 /* #endregion Made */
 
 /* #region Products */
@@ -516,8 +561,31 @@ img {
   width: calc((100% - 16px * 2) / 3);
 }
 .bestsellers-thumb {
+  position: relative;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 500ms ease-in;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  backdrop-filter: blur(15px);
+  background: linear-gradient(161deg, #fdfdff 0%, rgba(8, 2, 21, 0) 100%);
+}
+.bestsellers-item:hover .overlay {
+  transform: translateY(0);
 }
 .bestsellers-ill {
 }
@@ -542,6 +610,9 @@ img {
 .reviews {
   padding-bottom: 120px;
 }
+.reviews-title {
+  margin-bottom: 91px;
+}
 .reviews-list {
   display: flex;
   flex-wrap: wrap;
@@ -550,6 +621,7 @@ img {
   margin-bottom: 50px;
 }
 .reviews-item {
+  position: relative;
   width: calc((100% - 28px * 2) / 3);
   padding: 55px 24px 24px;
   background: #fff;
@@ -558,6 +630,9 @@ img {
   box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
 }
 .reviews-avatar {
+  position: absolute;
+  top: -42px;
+  left: calc((100% - 80px) / 2);
 }
 .reviews-author {
   margin-bottom: 24px;
@@ -652,9 +727,24 @@ img {
   text-align: center;
   letter-spacing: -0.02em;
   color: #fff;
+  transition: color 300ms ease-in;
 }
 .contacts-link:hover,
 .contacts-link:focus {
   color: #fd9222;
 }
 /* #endregion Contacts */
+
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(173, 216, 230, 0.25);
+  display: none;
+}
+.modal {
+  font-size: 100px;
+}
