@@ -1,4 +1,7 @@
 /* #region Base */
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Montserrat, sans-serif;
   color: #111;
@@ -128,6 +131,48 @@ img {
   background-color: #fd9222;
 }
 /* #endregion Common */
+
+/* #region Animation */
+@keyframes move-bottom {
+  0% {
+    transform: translateX(0) translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes move-right {
+  0% {
+    transform: translateX(-100px) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes move-top {
+  0% {
+    transform: translateX(0) translateY(100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+/* #endregion Animation */
 
 /* #region Logo */
 .logo {
@@ -273,10 +318,8 @@ img {
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #fff;
-  /* transform: translateX(10px) translateY(150px);
-  transform: scale(0.3);
-  transform: rotate(45deg);
-  transform: skewX(10deg) skewY(10deg); */
+
+  animation: move-bottom 500ms ease-in 2s both;
 }
 .hero-list {
   display: flex;
@@ -284,7 +327,11 @@ img {
 
   margin-right: auto;
 }
-.hero-item {
+.hero-item:first-child > .btn {
+  animation: move-right 500ms cubic-bezier(0, 1.14, 1, 1.19) 2700ms both;
+}
+.hero-item:last-child > .btn {
+  animation: move-right 500ms cubic-bezier(0, 1.14, 1, 1.19) 2500ms both;
 }
 .hero-wrapper {
   display: flex;
@@ -302,6 +349,8 @@ img {
   letter-spacing: -0.03em;
   color: #fff;
   transition: color 300ms ease-in;
+
+  /* animation: move-top 500ms cubic-bezier(0, 1.1, 1, 1.32) 4000ms both; */
 }
 .hero-link:hover,
 .hero-link:focus {
@@ -736,11 +785,25 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
-  background-color: rgba(173, 216, 230, 0.25);
-  display: none;
+  height: 100%;
+  z-index: 10000;
+  background: rgba(46, 47, 66, 0.4);
 }
 .modal {
-  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 517px;
+  min-height: 794px;
+  background: #fafafa;
+  border-radius: 15px;
+}
+input {
+  display: block;
+}
+textarea {
+  resize: none;
 }
 /* #endregion Modal window */
