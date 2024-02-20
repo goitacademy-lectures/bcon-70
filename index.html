@@ -19,6 +19,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
+    <!-- Animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -27,7 +33,7 @@
     <header class="header" id="home">
       <div class="container">
         <nav class="header-nav">
-          <a class="logo" href="">
+          <a class="logo animate__animated animate__heartBeat" href="">
             <span class="logo-accent">SIMPLY</span> CHOCOLATE
             <img
               class="logo-icon"
@@ -112,7 +118,10 @@
                 </button>
               </li>
             </ul>
-            <a class="hero-link" href="#benefits">
+            <a
+              class="hero-link animate__animated animate__bounceInUp animate__delay-4s"
+              href="#benefits"
+            >
               scroll down
               <span class="hero-link-decor">
                 <svg class="hero-link-icon" width="22" height="22">
@@ -335,7 +344,11 @@
             Our <span class="accent">products</span>
           </h2>
           <ul class="products-list">
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-1.jpg"
@@ -347,7 +360,11 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">45 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="600"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-2.jpg"
@@ -359,7 +376,11 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">50 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="900"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-3.jpg"
@@ -371,7 +392,11 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">66 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="1200"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-4.jpg"
@@ -383,7 +408,11 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">54 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="1500"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-5.jpg"
@@ -395,7 +424,11 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">45 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="1800"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-6.jpg"
@@ -407,7 +440,11 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">50 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="2100"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-7.jpg"
@@ -419,7 +456,11 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">66 UAH</button>
             </li>
-            <li class="products-item">
+            <li
+              class="products-item"
+              data-aos="fade-right"
+              data-aos-delay="2400"
+            >
               <img
                 class="products-ill"
                 src="./images/products/img-8.jpg"
@@ -634,13 +675,129 @@
               <a class="menu-link" href="#reviews">Chocolate is loved</a>
             </li>
           </ul>
+
+          <div>
+            <form class="footer-form">
+              <label class="footer-form-label">
+                <input
+                  class="footer-form-input"
+                  type="email"
+                  placeholder="Enter your email"
+                />
+              </label>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
       </div>
     </footer>
     <!-- #endregion -->
-    <!-- Modal window -->
+    <!-- #region Modal window -->
     <div class="backdrop">
-      <div class="modal">BACKDROP &amp; MODAL WINDOW</div>
+      <div class="modal">
+        <button class="modal-btn" type="button" aria-label="Modal close button">
+          <svg class="modal-btn-icon" width="28" height="28">
+            <use href="./images/icons.svg#x-close"></use>
+          </svg>
+        </button>
+        <p class="modal-caption">LEAVE A REVIEW ABOUT OUR CHOCOLATE</p>
+        <form class="modal-form" name="review_form" autocomplete="off">
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_name">Name</label>
+            <div class="modal-form-box">
+              <input
+                class="modal-form-input"
+                type="text"
+                name="user_name"
+                id="user_name"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_email">Email</label>
+            <div class="modal-form-box">
+              <input
+                class="modal-form-input"
+                type="text"
+                name="user_email"
+                id="user_email"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#mail"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_phone"
+              >Phone number</label
+            >
+            <div class="modal-form-box">
+              <input
+                class="modal-form-input"
+                type="text"
+                name="user_phone"
+                id="user_phone"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label for="user_messafe">Comment</label>
+            <textarea
+              name="user_messafe"
+              id="user_messafe"
+              rows="4"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
+
+          <label class="modal-form-agreement agreement">
+            <input type="checkbox" />
+            <span class="agreement-checkbox">
+              <svg class="agreement-checkbox-icon" width="" height="">
+                <use href=""></use>
+              </svg>
+            </span>
+            I accept the terms and conditions of the
+            <a
+              class="agreement-link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
+    <!-- #endregion -->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 380,
+        once: true,
+      });
+
+      // const modal = document.querySelector('.modal');
+      // console.log('Left position', modal.offsetLeft);
+      // console.log('Top position', modal.offsetTop);
+      // const modalForm = document.querySelector('.modal-form');
+
+      // console.log('modalForm.name:', modalForm.name);
+      // modalForm.addEventListener('submit', event => {
+      //   event.preventDefault();
+      //   console.log(event.target.elements.user_pass.value);
+      //   event.target.reset();
+      // });
+    </script>
   </body>
 </html>
