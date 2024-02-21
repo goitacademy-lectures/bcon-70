@@ -676,18 +676,18 @@
             </li>
           </ul>
 
-          <div>
-            <form class="footer-form">
-              <label class="footer-form-label">
-                <input
-                  class="footer-form-input"
-                  type="email"
-                  placeholder="Enter your email"
-                />
-              </label>
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
+          <form class="footer-form">
+            <label class="footer-form-label">
+              <input
+                class="footer-form-input"
+                type="email"
+                placeholder="Enter your email"
+              />
+            </label>
+            <button class="btn btn-accent footer-btn" type="submit">
+              Subscribe ✈️
+            </button>
+          </form>
         </div>
       </div>
     </footer>
@@ -700,7 +700,10 @@
             <use href="./images/icons.svg#x-close"></use>
           </svg>
         </button>
-        <p class="modal-caption">LEAVE A REVIEW ABOUT OUR CHOCOLATE</p>
+        <p class="modal-caption">
+          LEAVE A REVIEW ABOUT
+          <span class="modal-caption-accent">OUR CHOCOLATE</span>
+        </p>
         <form class="modal-form" name="review_form" autocomplete="off">
           <div class="modal-form-field">
             <label class="modal-form-label" for="user_name">Name</label>
@@ -710,6 +713,10 @@
                 type="text"
                 name="user_name"
                 id="user_name"
+                required
+                minlength="2"
+                pattern="[a-zA-Z]+\s[a-zA-Z]*"
+                title="Name must be two words separated by space"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#user"></use>
@@ -724,6 +731,7 @@
                 type="text"
                 name="user_email"
                 id="user_email"
+                required
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#mail"></use>
@@ -747,33 +755,44 @@
             </div>
           </div>
           <div class="modal-form-field">
-            <label for="user_messafe">Comment</label>
+            <label class="modal-form-label" for="user_messafe">Comment</label>
             <textarea
+              class="modal-form-message"
               name="user_messafe"
               id="user_messafe"
               rows="4"
               placeholder="Enter text"
+              required
+              minlength="10"
             ></textarea>
           </div>
 
-          <label class="modal-form-agreement agreement">
-            <input type="checkbox" />
-            <span class="agreement-checkbox">
-              <svg class="agreement-checkbox-icon" width="" height="">
-                <use href=""></use>
-              </svg>
-            </span>
-            I accept the terms and conditions of the
-            <a
-              class="agreement-link"
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
-          </label>
-          <button type="submit">Send</button>
+          <div class="modal-form-wrapper">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              name="user_agreement"
+              value="false"
+              id="user_agreement"
+            />
+            <label class="modal-form-agreement agreement" for="user_agreement">
+              <span class="agreement-checkbox">
+                <svg class="agreement-checkbox-icon" width="10" height="10">
+                  <use href="./images/icons.svg#check"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a
+                class="agreement-link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </a>
+            </label>
+          </div>
+          <button class="btn btn-accent" type="submit">Send</button>
         </form>
       </div>
     </div>
