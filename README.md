@@ -20,6 +20,23 @@
 - Тег `datalist`
 - Тег `fieldset`
 
+## План заняття (21.02.2024):
+
+- Оформлення стану елементів форми
+- Атрибути валідації:
+  - `required`
+  - `minlength || maxlength`
+  - `min || max`
+- Псевдокласи стану:
+  - `:enabled || :disabled`
+  - `:checked`
+  - `:in-range || :out-of-range`
+  - `:required || :optional`
+  - `:valid || :invalid`
+- Псевдоелемент `::placeholder` і псевдоклас `:placeholder-shown`
+- Комбінування псевдокласів
+- Псевдоклас `:focus-within`
+
 ---
 
 [Посилання на макет 🎨](https://www.figma.com/file/SHNrA7r9RBXLqDUVYZjL1g/Simply-Chocolate?type=design&node-id=606%3A34&mode=design&t=nRzD3pyVqUjvLrgn-1)
