@@ -1,3 +1,7 @@
+.hide {
+  display: none;
+}
+
 /* #region Base */
 html {
   scroll-behavior: smooth;
@@ -59,12 +63,24 @@ img {
   padding: 60px 0;
 }
 .container {
-  width: 1168px;
-  padding: 0 16px;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
   margin: 0 auto;
-  /*
+
   outline: 2px solid red;
-  outline-offset: -2px; */
+  outline-offset: -2px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+    padding: 0 16px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1168px;
+  }
 }
 .ingridients-title,
 .made-title,
@@ -382,27 +398,47 @@ img {
 
 /* #region Benefits */
 .benefits {
-  padding: 50px 0;
+  padding: 20px 0;
   background: #1e1823;
+}
+@media only screen and (min-width: 768px) {
+  .benefits {
+    padding: 50px 0;
+  }
 }
 .benefits-list {
   display: flex;
-  justify-content: center;
-  gap: 88px;
+  flex-direction: column;
+  row-gap: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .benefits-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 88px;
+    row-gap: 44px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .benefits-list {
+    justify-content: center;
+  }
 }
 .benefits-item {
   position: relative;
   width: 308px;
 }
-.benefits-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: calc((100% - 124px) / 2);
-  right: -44px;
-  display: block;
-  width: 1px;
-  height: 51%;
-  background: rgba(255, 255, 255, 0.5);
+@media only screen and (min-width: 1158px) {
+  .benefits-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: calc((100% - 124px) / 2);
+    right: -44px;
+    display: block;
+    width: 1px;
+    height: 51%;
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 .benefits-wrapper {
   display: flex;
@@ -414,8 +450,6 @@ img {
 
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-}
-.benefits-icon {
 }
 .benefits-caption {
   margin-bottom: 18px;
@@ -435,7 +469,17 @@ img {
 
 /* #region Ingridients */
 .ingridients {
-  padding-top: 120px;
+  padding-top: 80px;
+}
+@media only screen and (min-width: 768px) {
+  .ingridients {
+    padding-top: 100px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .ingridients {
+    padding-top: 120px;
+  }
 }
 .ingridients-list {
   display: flex;
@@ -452,7 +496,6 @@ img {
   border: 1px solid #fd9222;
   border-radius: 15px;
 }
-/* a * n + b */
 .ingridients-item:nth-child(4n + 1) {
   background: #fd9222;
   color: #fff;
