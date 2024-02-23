@@ -30,10 +30,10 @@
   </head>
   <body class="page">
     <!-- #region Header -->
-    <header class="header hide" id="home">
+    <header class="header" id="home">
       <div class="container">
         <nav class="header-nav">
-          <a class="logo animate__animated animate__heartBeat" href="">
+          <a class="logo" href="">
             <span class="logo-accent">SIMPLY</span> CHOCOLATE
             <img
               class="logo-icon"
@@ -43,6 +43,11 @@
               height="24"
             />
           </a>
+          <button class="mobile-menu-btn" type="button">
+            <svg class="mobile-menu-icon" width="28" height="28">
+              <use href="./images/icons.svg#burger-menu"></use>
+            </svg>
+          </button>
           <ul class="header-menu menu">
             <li class="menu-item">
               <a class="menu-link current" href="#home">Home</a>
@@ -101,7 +106,7 @@
     <!-- #endregion Header -->
     <main>
       <!-- #region Hero -->
-      <section class="hero hide">
+      <section class="hero">
         <div class="container">
           <h1 class="hero-title">
             Treat yourself or a loved one to our&nbsp;finest ingredients for a
@@ -110,20 +115,19 @@
           <div class="hero-wrapper">
             <ul class="hero-list">
               <li class="hero-item">
-                <button class="btn btn-accent" type="button">Buy now</button>
+                <button class="hero-btn btn btn-accent" type="button">
+                  Buy now
+                </button>
               </li>
               <li class="hero-item">
-                <button class="btn btn-light" type="button">
+                <button class="hero-btn btn btn-light" type="button">
                   How it’s made
                 </button>
               </li>
             </ul>
-            <a
-              class="hero-link animate__animated animate__bounceInUp animate__delay-4s"
-              href="#benefits"
-            >
+            <a class="hero-link" href="#benefits">
               scroll down
-              <span class="hero-link-decor">
+              <span class="hero-link-box">
                 <svg class="hero-link-icon" width="22" height="22">
                   <use href="./images/icons.svg#icon-small-arrow"></use>
                 </svg>
@@ -201,10 +205,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-1.png    1x,
+                  ./images/ingridients/img-1@2x.png 2x
+                "
                 src="./images/ingridients/img-1.png"
                 alt="Milk chocolate"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">MILK CHOCOLATE</h3>
             </li>
@@ -214,10 +223,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-2.png    1x,
+                  ./images/ingridients/img-2@2x.png 2x
+                "
                 src="./images/ingridients/img-2.png"
                 alt="Milk"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">MILK</h3>
             </li>
@@ -227,10 +241,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-3.png    1x,
+                  ./images/ingridients/img-3@2x.png 2x
+                "
                 src="./images/ingridients/img-3.png"
                 alt="Nuts"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">NUTS</h3>
             </li>
@@ -240,10 +259,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-4.png    1x,
+                  ./images/ingridients/img-4@2x.png 2x
+                "
                 src="./images/ingridients/img-4.png"
                 alt="Semi-sweet chocolate"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">SEMI - SWEET CHOCOLATE</h3>
             </li>
@@ -253,10 +277,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-5.png    1x,
+                  ./images/ingridients/img-5@2x.png 2x
+                "
                 src="./images/ingridients/img-5.png"
                 alt="Cacao"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">CACAO</h3>
             </li>
@@ -266,10 +295,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-6.png    1x,
+                  ./images/ingridients/img-6@2x.png 2x
+                "
                 src="./images/ingridients/img-6.png"
                 alt="Raspberry"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">RASPBERRY</h3>
             </li>
@@ -279,10 +313,15 @@
               </svg>
               <img
                 class="ingridients-ill"
+                srcset="
+                  ./images/ingridients/img-7.png    1x,
+                  ./images/ingridients/img-7@2x.png 2x
+                "
                 src="./images/ingridients/img-7.png"
                 alt="Coconut oil"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingridients-caption">COCONUT OIL</h3>
             </li>
@@ -292,7 +331,7 @@
       <!-- #endregion  -->
 
       <!-- #region Made -->
-      <section class="made section hide" id="made">
+      <section class="made section" id="made">
         <div class="container">
           <h2 class="made-title">How it’s <span class="accent">made</span>?</h2>
           <div class="made-wrapper">
@@ -338,17 +377,13 @@
       <!-- #endregion  -->
 
       <!-- #region Products -->
-      <section class="products section hide">
+      <section class="products section">
         <div class="container">
           <h2 class="products-title">
             Our <span class="accent">products</span>
           </h2>
           <ul class="products-list">
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-1.jpg"
@@ -360,11 +395,7 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">45 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="600"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-2.jpg"
@@ -376,11 +407,7 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">50 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="900"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-3.jpg"
@@ -392,11 +419,7 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">66 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="1200"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-4.jpg"
@@ -408,11 +431,7 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">54 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="1500"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-5.jpg"
@@ -424,11 +443,7 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">45 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="1800"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-6.jpg"
@@ -440,11 +455,7 @@
               <p class="products-category">Milk chocolate</p>
               <button class="products-price" type="button">50 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="2100"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-7.jpg"
@@ -456,11 +467,7 @@
               <p class="products-category">Dark chocolate</p>
               <button class="products-price" type="button">66 UAH</button>
             </li>
-            <li
-              class="products-item"
-              data-aos="fade-right"
-              data-aos-delay="2400"
-            >
+            <li class="products-item">
               <img
                 class="products-ill"
                 src="./images/products/img-8.jpg"
@@ -478,7 +485,7 @@
       <!-- #endregion  -->
 
       <!-- #region Bestsellers -->
-      <section class="bestsellers section hide">
+      <section class="bestsellers section">
         <div class="container">
           <h2 class="bestsellers-title">
             <span class="accent">Top</span> sellers
@@ -538,7 +545,7 @@
       <!-- #endregion -->
 
       <!-- #region Reviews -->
-      <section class="reviews section hide" id="reviews">
+      <section class="reviews section" id="reviews">
         <div class="container">
           <h2 class="reviews-title">
             <span class="accent">Chocolate</span> is loved
@@ -597,7 +604,7 @@
       <!-- #endregion -->
     </main>
     <!-- #region Footer -->
-    <footer class="footer hide">
+    <footer class="footer">
       <div class="container">
         <div class="footer-top">
           <p class="footer-slogan">
@@ -605,14 +612,14 @@
           </p>
           <div class="footer-wrapper">
             <p class="footer-caption">Social networks</p>
-            <ul class="footer-socials socials">
+            <ul class="socials">
               <li class="socials-item">
                 <a
                   class="socials-link"
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook site"
+                  aria-label="Link to Facebook"
                 >
                   <svg class="socials-icon" width="24" height="24">
                     <use href="./images/icons.svg#icon-facebook"></use>
@@ -625,7 +632,7 @@
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram site"
+                  aria-label="Link to Instagram"
                 >
                   <svg class="socials-icon" width="24" height="24">
                     <use href="./images/icons.svg#icon-instagram"></use>
@@ -638,7 +645,7 @@
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter site"
+                  aria-label="Link to Twitter"
                 >
                   <svg class="socials-icon" width="24" height="24">
                     <use href="./images/icons.svg#icon-twitter"></use>
@@ -663,30 +670,28 @@
             </ul>
           </address>
         </div>
-        <div class="footer-bootom">
-          <ul class="footer-menu menu">
-            <li class="menu-item">
-              <a class="menu-link" href="#home">Home</a>
+
+        <div class="footer-bottom">
+          <ul class="footer-menu">
+            <li class="footer-menu-item">
+              <a class="footer-menu-link" href="#home">Home</a>
             </li>
-            <li class="menu-item">
-              <a class="menu-link" href="#made">How it’s made?</a>
+            <li class="footer-menu-item">
+              <a class="footer-menu-link" href="#made">How it’s made?</a>
             </li>
-            <li class="menu-item">
-              <a class="menu-link" href="#reviews">Chocolate is loved</a>
+            <li class="footer-menu-item">
+              <a class="footer-menu-link" href="#reviews">Chocolate is loved</a>
             </li>
           </ul>
 
-          <form class="footer-form">
-            <label class="footer-form-label">
-              <input
-                class="footer-form-input"
-                type="email"
-                placeholder="Enter your email"
-              />
-            </label>
-            <button class="btn btn-accent footer-btn" type="submit">
-              Subscribe ✈️
-            </button>
+          <form class="footer-form" name="newsletter">
+            <input
+              class="footer-form-input"
+              type="email"
+              name="newsletter_email"
+              placeholder="Enter your email"
+            />
+            <button class="btn btn-accent" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
@@ -797,12 +802,104 @@
       </div>
     </div>
     <!-- #endregion -->
+    <!-- #region Mobile menu -->
+    <div class="mobile-menu">
+      <button class="menu-btn">
+        <svg class="mobile-menu-icon" width="24" height="24">
+          <use href="./images/icons.svg#x-close"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link current" href="">Studio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Portfolio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Contacts</a>
+        </li>
+      </ul>
+      <ul class="mobile-menu-contatcs">
+        <li class="mobile-menu-contact">
+          <a class="mobile-menu-contatc-link accent" href="tel:+11000111-11-11">
+            +11 (000) 111-11-11
+          </a>
+        </li>
+        <li class="mobile-menu-contact">
+          <a class="mobile-menu-contatc-link" href="mailto:info@devstudio.com">
+            info@devstudio.com
+          </a>
+        </li>
+      </ul>
+      <ul class="mobile-menu-socials socials">
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- #endregion Mobile menu -->
 
     <!-- Scripts -->
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      const productsCard = document.querySelector('.products-list');
+      [...productsCard.children].map((item, index) => {
+        item.setAttribute('data-aos', 'fade-right');
+        item.setAttribute('data-aos-delay', `${(index + 1) * 300}`);
+      });
+
       AOS.init({
-        offset: 380,
+        offset: 200,
         once: true,
       });
 
@@ -817,6 +914,6 @@
       //   console.log(event.target.elements.user_pass.value);
       //   event.target.reset();
       // });
-    </script> -->
+    </script>
   </body>
 </html>
